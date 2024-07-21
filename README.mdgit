@@ -1,0 +1,1 @@
+"# tickets-websockets"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/rocnail36/tickets-websockets.gitgit push -u origin mainRrrs
