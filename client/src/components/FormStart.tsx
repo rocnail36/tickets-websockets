@@ -21,7 +21,7 @@ const navigate = useNavigate()
      
 const formSchema = z.object({
     username: z.string().min(2,"debes colocar almenos dos caracteres").max(50,"maximos 50 caracteres"),
-    desktop: z.number({message:"debes colocar un numero valido"}).min(1,"debe ser mayor a 0")
+    desktop: z.coerce.number().min(1)
   })
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,9 +34,8 @@ const formSchema = z.object({
  
  
   function onSubmit(values: z.infer<typeof formSchema>) {
-
-    console.log(values) 
-    navigate("/user")
+    console.log(values)
+    navigate(`/desktop/${values.desktop}/${values.username}`)
   }
     
 

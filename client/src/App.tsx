@@ -15,7 +15,7 @@ function App() {
         <Route element={<Home/>} path='/'  ></Route>
         <Route element={<Generate/>} path='/generate' />
         <Route element={<LineTicket/>} path='/line' />
-        <Route element={<Desktop/>} path='/desktop/:id' />
+        <Route element={<Desktop/>} path='/desktop/:id/:name' />
         <Route element={<Navigate to={"/"}/>} path='/*' />
      </Routes>
     </>

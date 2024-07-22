@@ -2,8 +2,6 @@ import React from 'react'
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
@@ -20,20 +18,19 @@ export const CardTicket = ({desktopNumber,name,ticketNumber}:Props) => {
 
 
   return (
-    <Card>
-  <CardHeader className='text-center'>
-    <CardTitle>Ticket {ticketNumber}</CardTitle>
+    <Card  >
+  <CardHeader className={`text-center ${!name ? "py-2" : ""}`}>
+    <CardTitle className={!name ? "text-md" : ""}>Ticket {ticketNumber}</CardTitle>
   </CardHeader>
    
    {
     desktopNumber &&  <CardContent>
-                 <p>escritorio: 2</p>
+                 <p>escritorio: {desktopNumber}</p>
+                 <p>atendido por : {name}</p>
                 </CardContent>
    }
   
-  {name && <CardFooter>
-    <p>atendido por : fernando</p>
-           </CardFooter>}
+ 
 </Card>
 
   )
